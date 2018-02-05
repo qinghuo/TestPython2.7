@@ -1,9 +1,9 @@
 #-- coding:utf-8 --
 import socket
 import threading
-
+import time
 bind_ip="127.0.0.1"
-bind_port=9999
+bind_port=9990
 #AF_INET 说明使用的是ip4地址 SOCK_STREAM说明使用的协议是tcp
 server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server.bind((bind_ip,bind_port))
@@ -13,6 +13,7 @@ print("[*] listening on %s:%d"%(bind_ip,bind_port))
 def handle_client(client_socket):
     requst=client_socket.recv(1024)
     print("[*]received:%s"%requst)
+    time.sleep(6)
     client_socket.send(b"ack")
     client_socket.close()
 
