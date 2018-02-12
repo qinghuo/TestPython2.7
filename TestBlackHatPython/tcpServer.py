@@ -11,10 +11,10 @@ server.listen(5)
 print("[*] listening on %s:%d"%(bind_ip,bind_port))
 
 def handle_client(client_socket):
+    client_socket.send(b"ack")
+    # while True:
     requst=client_socket.recv(1024)
     print("[*]received:%s"%requst)
-    time.sleep(6)
-    client_socket.send(b"ack")
     client_socket.close()
 
 while True:
