@@ -13,4 +13,4 @@ def ssh_command(ip,user,passwd,command):
     return
 
 if __name__ == '__main__':
-    ssh_command('172.20.100.112','dev','weidai@1234','ls')
+    ssh_command('1123456','1234','123','ls')
